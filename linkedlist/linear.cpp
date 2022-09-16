@@ -41,6 +41,6 @@ int main()
     fourth->next = tail;
     tail->next = NULL;
 
-    // display
+    // display1
     display(head);
 }
