@@ -1,14 +1,18 @@
 #include <iostream>
 using namespace std;
 
+// Stack using Function Template
+// Function templates are special functions that can operate with generic types
+
+template <typename N>
 class DNode
 {
 public:
-    int data;
+    N data;
     DNode *prev;
     DNode *next;
 
-    DNode(int data)
+    DNode(N data)
     {
         this->data = data;
         prev = NULL;
@@ -16,10 +20,11 @@ public:
     }
 };
 
+template <typename S>
 class Stack
 {
-    DNode *head;
-    DNode *top; // tail of head
+    DNode<S> *head;
+    DNode<S> *top; // tail of head
     int count = 0;
 
 public:
@@ -29,9 +34,9 @@ public:
         top = NULL;
     }
     // PUSH
-    void push(int data)
+    void push(S data)
     {
-        DNode *newNode = new DNode(data);
+        DNode<S> *newNode = new DNode<S>(data);
         if (head == NULL)
         {
             head = top = newNode;
@@ -45,16 +50,16 @@ public:
         count++;
     }
     // POP
-    int pop()
+    S pop()
     {
-        DNode *delnode;
+        DNode<S> *delnode;
         delnode = top;
-        int chk = top->data;
+        S chk = top->data;
 
         if (head == NULL)
         {
             cout << "Stack Underflow" << endl;
-            return -1;
+            return chk;
         }
 
         else if (top == head)
@@ -85,14 +90,15 @@ public:
         return count;
     }
     // TOP
-    int Top()
+    S Top()
     {
+        S chk;
         if (top == NULL)
         {
             cout << "Stack Underflow, there is no element" << endl;
         }
         else
             return top->data;
-        return -1;
+        return chk;
     }
 };

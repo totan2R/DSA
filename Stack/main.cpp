@@ -4,12 +4,12 @@ using namespace std;
 
 int main()
 {
-    Stack stk;
+    Stack <string>stk;
 
-    stk.push(1);
-    stk.push(2);
-    stk.push(3);
-    stk.push(4);
+    stk.push("Totan");
+    stk.push("Miton");
+    stk.push("Ringku");
+    stk.push("Maa");
 
     cout<<"size: "<<stk.size()<<endl;
     cout<<"top: "<<stk.Top()<<endl;
