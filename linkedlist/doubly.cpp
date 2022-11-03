@@ -78,6 +78,6 @@ int main()
     insertAtTail(head, 8);
     insertAtTail(head, 100);
     display(head);
-
-    reverseDisplay(head);
+    cout<<head->next->prev->data<<endl;
+    //reverseDisplay(head);
 }
